@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="PMAPI\**" />
+    <EmbeddedResource Remove="PMAPI\**" />
+    <None Remove="PMAPI\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PMAPI\PMAPI.csproj" />
   </ItemGroup>
 
@@ -37,6 +43,6 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy $(OutDir)$(AssemblyName).dll &quot;$(PRIMITIER_DIR)\Mods\&quot;"/>
+    <Exec Command="copy $(OutDir)$(AssemblyName).dll &quot;$(PRIMITIER_DIR)\Mods\&quot;" />
   </Target>
 </Project>
